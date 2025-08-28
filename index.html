@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yizhou Wang - CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .section-title {
+            position: relative;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #3b82f6;
+            border-radius: 9999px;
+        }
+        .project-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container flex justify-between items-center py-4">
+            <div class="flex items-center space-x-4">
+                <span class="text-2xl font-bold text-gray-900">Yizhou Wang</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#summary" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Summary</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Projects</a>
+                <a href="#publications" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Publications</a>
+                <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Education</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Skills</a>
+                <a href="#hobbies" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Hobbies</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#summary" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Summary</a>
+            <a href="#projects" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Projects</a>
+            <a href="#publications" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Publications</a>
+            <a href="#education" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Education</a>
+            <a href="#skills" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Skills</a>
+            <a href="#hobbies" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Hobbies</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Summary Section -->
+        <section id="summary" class="py-12">
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Yizhou Wang</h1>
+                <p class="text-lg text-gray-600 mb-6">Ph.D. Candidate in Physics | Washington University in St. Louis</p>
+                <div class="flex items-center space-x-4 mb-6 text-gray-700">
+                    <span>w.yizhou@wustl.edu</span>
+                    <span>•</span>
+                    <span>+1-314-574-7851</span>
+                </div>
+                <div class="flex space-x-4 mb-8">
+                    <a href="https://scholar.google.com/citations?user=8f7emQQAAAAJ" target="_blank" class="text-blue-600 hover:underline transition-colors duration-300">Google Scholar</a>
+                    <a href="https://www.linkedin.com/in/yizhou-wang-0063b0179/" target="_blank" class="text-blue-600 hover:underline transition-colors duration-300">LinkedIn</a>
+                    <a href="https://github.com/MichealWangYZ" target="_blank" class="text-blue-600 hover:underline transition-colors duration-300">GitHub</a>
+                </div>
+                <p class="text-gray-700">
+                    A diligent Ph.D. candidate whose research experience is marked by using physics-inspired simplification and intuition to capture, disentangle, and extract the essence of experimental and numerical data, from the long-tail behavior of a function to the time evolution for quantum states.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-12">
+            <h2 class="section-title">Projects</h2>
+            <div class="space-y-8">
+                <!-- NV Project -->
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">NV Center Project</h3>
+                    <p class="text-gray-500 mb-4">Simultaneous determination of local magnetic fields and sensor orientation with Nitrogen-Vacancy centers in nanodiamond</p>
+                    <p class="text-gray-700">
+                        This project focuses on a significant challenge: simultaneously determining both the orientation of a sensor and the local magnetic field. The initial approach involved deriving an analytical model to map applied bias fields to magnetic splittings. However, this proved to be complex. Through a process of physically motivated refinement, we transitioned from equation-solving to a more robust optimization-based approach. We realized that a naive optimization would be computationally expensive due to the large number of parameters. Our key insight was to disentangle the problem into two sequential steps: first, determining the magnetic field, and second, determining the sensor orientation. By transforming the multi-degree-of-freedom problem into a simpler trigonometric one, we were able to prove that a minimum of four distinct bias magnetic fields are sufficient to determine the local magnetic field accurately.
+                    </p>
+                </div>
+
+                <!-- CsYbSe2 Project -->
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">CsYbSe2 Project</h3>
+                    <p class="text-gray-500 mb-4">Pressure-induced Crystal Structural and Insulator-Metal Transitions in the Quantum Spin Liquid Candidate CsYbSe2</p>
+                    <p class="text-gray-700">
+                        This was a large-scale computational project involving a system with ten f-electrons, which is typically computationally prohibitive. We used physical intuition to dramatically simplify the problem. By analyzing the chemical environment, we hypothesized that nine of the 4f electrons were "frozen" and not participating in bonding. This contradicted standard DFT-level calculations which suggested the material was a conductor. By applying a physics-inspired method and using a custom Ytterbium pseudo-potential with the f-electrons frozen, we were able to dramatically reduce the computational cost while providing an accurate prediction for the insulating phase, which aligned well with experimental results. This demonstrates the power of using physical insight to overcome computational bottlenecks.
+                    </p>
+                </div>
+
+                <!-- hBN Project -->
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Twist-Driven Exciton Funnel Effect in Bilayer Boron Nitride</h3>
+                    <p class="text-gray-500 mb-4">Twist-Driven Deep-Ultraviolet-Wavelength Exciton Funnel Effect in Bilayer Boron Nitride</p>
+                    <p class="text-gray-700">
+                        My contribution to this project was using molecular dynamics (MD) to simplify complex calculations. Previously, simulating twisted systems required calculating the interactions of tens of thousands of atoms, an incredibly expensive process. I developed a method that only requires knowing the local stacking style, band structure, and how the twisting distorts the atomic forces, which is efficiently captured by LAMMPS. I quantified two types of strain: a pressure-like effect (total length compression) and a dragging effect (deviation of a central atom from its neighbors). This approach, leveraging the computational efficiency of MD ($O(N)$ vs. $O(N^2)$ or higher for DFT/GW), dramatically simplified the calculation.
+                    </p>
+                </div>
+                
+                <!-- Kicked Rotor Project -->
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Kicked Rotor Project</h3>
+                    <p class="text-gray-500 mb-4">Dramatic Delocalization induced by mutually interactive kicked rotor</p>
+                    <p class="text-gray-700">
+                        This project explores the fascinating phenomenon of two mutually interacting components. We found that coupling two insulators can lead to a conductor-like state. This time-series problem was analyzed by first proposing a tight-binding model, which was further optimized using a Fourier transform to reduce computational costs. We then investigated the underlying mechanisms, performing both analytical and numerical studies to determine that the delocalization is primarily driven by a scattering-like behavior rather than a phase-induced effect.
+                    </p>
+                </div>
+
+                <!-- Undergrad Thesis -->
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Undergraduate Thesis: Resonant Atomic Arrays</h3>
+                    <p class="text-gray-500 mb-4">Optimization of coherent scattering of resonate atomic arrays</p>
+                    <p class="text-gray-700">
+                        My undergraduate thesis focused on an optimization problem: arranging a small number of atoms to maximize light scattering from a Gaussian beam. This was a complex many-body problem with a large number of independent parameters. To reduce the computational cost, I used physics intuition to identify a more limited, but physically meaningful, set of possible atomic arrangements. By focusing on these patterns, I was able to dramatically reduce the solution space and the number of optimization parameters, leading to a much more efficient and successful optimization process.
+                    </p>
+                </div>
+
+                <!-- BEC-BCS Crossover Project -->
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">BEC-BCS Crossover Project</h3>
+                    <p class="text-gray-500 mb-4">Self-consistent calculation of the spectral function of BEC-BCS Crossover State using Pade Method</p>
+                    <p class="text-gray-700">
+                        In this project, I performed a one-shot Green's function calculation to analyze the spectral function of an ultra-cold fermionic condensate. I used the Pade method for fitting, which is advantageous for capturing the correct asymptotic behavior of a Green's function. During this process, I discovered a numerical instability with the standard `numpy.linalg` library in the high-frequency region. I resolved this by switching to a more robust `scipy` method and implementing a weighted fitting approach. By giving more weight to the high-frequency points, I was able to ensure better convergence and preserve the correct high-frequency decay behavior, providing a more accurate spectral function.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-12">
+            <h2 class="section-title">Publications</h2>
+            <ul class="space-y-4 text-gray-700">
+                <li>
+                    <strong>Y. Wang*</strong>, H. Shen*, Z. Liu, Y. Yu, S. Du, C. Zu, and C. Zhang. <em>Simultaneous Determination of Local Magnetic Fields and Sensor Orientation with Nitrogen-Vacancy Centers in Nanodiamond</em> <a href="https://arxiv.org/abs/2507.05366" target="_blank" class="text-blue-600 hover:underline">[link]</a>. Under review at <strong>Physical Review Applied</strong>.
+                </li>
+                <li>
+                    R. Sereika, X. Xu, <strong>Y. Wang</strong>, et al. <em>Pressure-induced Crystal Structural and Insulator-Metal Transitions in the Quantum Spin Liquid Candidate CsYbSe2</em> <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.174106" target="_blank" class="text-blue-600 hover:underline">[link]</a>, <strong>Physical Review B</strong>, 2023.
+                </li>
+                <li>
+                    L. Zhu, <strong>Y. Wang</strong> and L. Yang. <em>Twist-Driven Deep-Ultraviolet-Wavelength Exciton Funnel Effect in Bilayer Boron Nitride</em> <a href="https://pubs.acs.org/doi/10.1021/acsaom.3c00389" target="_blank" class="text-blue-600 hover:underline">[link]</a>, <strong>ACS Applied Optical Materials</strong>, 2023.
+                </li>
+                <li>
+                    C. Yao, Y. Shi, J. Jung, Z. Vaci, <strong>Y. Wang</strong>, Z. Liu, Y. Yu, C. Zhang, S. Tikoo-Schantz and C. Zu. <em>Universal Reconstruction of Complex Magnetic Profiles with Minimum Prior Assumptions</em> <a href="https://arxiv.org/abs/2411.18882" target="_blank" class="text-blue-600 hover:underline">[link]</a>, Under Review at <strong>Physical Review Applied</strong>.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-12">
+            <h2 class="section-title">Education</h2>
+            <div class="space-y-6 text-gray-700">
+                <div>
+                    <h3 class="text-xl font-semibold">Washington University in St. Louis</h3>
+                    <p class="text-gray-600">Ph.D., Physics | Sep. 2022 -- May 2027 (Expected)</p>
+                    <p class="text-gray-600">Master of Science, Physics | Sep. 2022 -- Jun. 2024</p>
+                    <p class="text-sm text-gray-500 mt-1">Advisor: Prof. Chuanwei Zhang</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Fudan University</h3>
+                    <p class="text-gray-600">Bachelor of Science, Physics | Sep. 2018 -- Jun. 2022</p>
+                    <p class="text-sm text-gray-500 mt-1">Graduated with Honor</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-12">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="space-y-4 text-gray-700">
+                <p><strong>Programming Language:</strong> Python, C++, PyTorch, Git/GitHub, LaTeX, MATLAB</p>
+                <p><strong>High Performance Computing:</strong> MPI, SLURM</p>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="py-12">
+            <h2 class="section-title">Hobbies</h2>
+            <div class="space-y-4 text-gray-700">
+                <div>
+                    <h3 class="text-xl font-semibold">Urbanism and Public Transportation</h3>
+                    <p>
+                        A fervent urbanism and transit fan, I wrote two articles for a reputable Chinese media outlet, Pengpai, introducing the intersection of <a href="https://www.thepaper.cn/newsDetail_forward_28962057" target="_blank" class="text-blue-600 hover:underline">American transportation</a>, housing policy and the <a href="https://www.thepaper.cn/newsDetail_forward_3110325" target="_blank" class="text-blue-600 hover:underline">Abundance Agenda</a>.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Classical Music</h3>
+                    <p>
+                        My musical interests span from the late 19th and early 20th-century melodies of Tchaikovsky to the more challenging works of Shostakovich, and the timeless beauty of Beethoven's string quartets.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!--
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, onSnapshot, increment, updateDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // IMPORTANT: REPLACE THESE VALUES WITH YOUR OWN FIREBASE CONFIGURATION
+        // Go to your Firebase project settings to find these values.
+        // DO NOT SHARE THIS FILE WITH THESE VALUES HARDCODED IF YOU ARE SHARING IT PUBLICLY.
+        // For a public repository, you should use environment variables.
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        
+        // IMPORTANT: REPLACE THIS WITH YOUR OWN FIREBASE USER UID
+        // You can find this in the Firebase Authentication tab after you create your user.
+        const ownerId = "YOUR_OWNER_UID";
+
+        // --- Firebase Initialization and Authentication ---
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // This function will attempt to sign in the owner to show the private counter.
+        // It's a simple, hardcoded approach for a single-page site.
+        // For a more robust solution, you would implement a proper login flow.
+        const ownerEmail = "YOUR_OWNER_EMAIL@example.com";
+        const ownerPassword = "YOUR_OWNER_PASSWORD";
+
+        let isAuthenticatedOwner = false;
+
+        async function authenticateOwner() {
+            if (ownerId !== "YOUR_OWNER_UID") {
+                try {
+                    // Sign in with email and password to check if the current user is the owner
+                    await signInWithEmailAndPassword(auth, ownerEmail, ownerPassword);
+                    isAuthenticatedOwner = true;
+                    document.getElementById('private-counter-container').classList.remove('hidden');
+                    console.log("Owner authenticated successfully.");
+                } catch (error) {
+                    console.error("Owner authentication failed:", error);
+                    isAuthenticatedOwner = false;
+                }
+            } else {
+                console.log("Owner ID not configured. Private counter will not be displayed.");
+            }
+        }
+        
+        async function setupVisitorCounter() {
+            // Get a unique ID for the current visitor to avoid counting a refresh as a new visit
+            let visitorId = sessionStorage.getItem('visitorId');
+            if (!visitorId) {
+                visitorId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+                sessionStorage.setItem('visitorId', visitorId);
+            }
+
+            // We will have a separate document for each day to avoid a large array of visitors
+            const today = new Date().toISOString().slice(0, 10);
+            const counterRef = doc(db, 'page_views', today);
+
+            // Fetch the count and display it if the user is the owner
+            if (isAuthenticatedOwner) {
+                onSnapshot(counterRef, (docSnap) => {
+                    if (docSnap.exists() && docSnap.data().count) {
+                        document.getElementById('visitor-count').textContent = docSnap.data().count;
+                    } else {
+                        document.getElementById('visitor-count').textContent = '0';
+                    }
+                }, (error) => {
+                    console.error("Firestore onSnapshot error:", error);
+                });
+            }
+
+            // Increment the counter only if the current session hasn't already visited today
+            const hasVisitedToday = localStorage.getItem('visitedToday-' + today);
+            if (!hasVisitedToday) {
+                try {
+                    await updateDoc(counterRef, { count: increment(1) });
+                } catch (error) {
+                    if (error.code === 'not-found') {
+                        try {
+                            await setDoc(counterRef, { count: 1 });
+                        } catch (setErr) {
+                            console.error("Error creating document:", setErr);
+                        }
+                    } else {
+                        console.error("Error updating document:", error);
+                    }
+                }
+                localStorage.setItem('visitedToday-' + today, 'true');
+            }
+        }
+        
+        // This function is the main entry point for the Firebase logic.
+        async function initializeAppAndCounters() {
+            // Sign in anonymously first to allow public access to the document.
+            await setupVisitorCounter();
+            // Then, try to authenticate the owner to show the private counter.
+            await authenticateOwner();
+        }
+
+        window.onload = function() {
+            initializeAppAndCounters();
+            
+            // --- UI & Navigation Logic ---
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking
+                    if (document.getElementById('mobile-menu').classList.contains('flex')) {
+                        document.getElementById('mobile-menu').classList.remove('flex');
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                });
+            });
+
+            // Toggle mobile menu
+            document.getElementById('menu-button').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+        };
+    </script>
+    -->
+    <script>
+        window.onload = function() {
+            // --- UI & Navigation Logic ---
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking
+                    if (document.getElementById('mobile-menu').classList.contains('flex')) {
+                        document.getElementById('mobile-menu').classList.remove('flex');
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                });
+            });
+
+            // Toggle mobile menu
+            document.getElementById('menu-button').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+        };
+    </script>
+</body>
+</html>
