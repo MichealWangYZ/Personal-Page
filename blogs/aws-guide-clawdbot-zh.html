@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从零开始：在 AWS 上孵化你的 Clawdbot - 王一洲</title>
+    <meta name="description" content="如何在 AWS 上从零开始部署 Clawdbot，包括硬件选择、Swap 配置及 TUI 孵化过程。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .container { max-width: 800px; margin: 0 auto; padding: 4rem 1rem; }
+        .content-card { background-color: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; color: #111827; line-height: 1.2; }
+        h2 { font-size: 1.75rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1f2937; border-bottom: 2px solid #3b82f6; display: inline-block; }
+        p { margin-bottom: 1.25rem; line-height: 1.75; }
+        code { background-color: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: monospace; font-size: 0.9em; }
+        pre { background-color: #1f2937; color: #f3f4f6; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.25rem; }
+        ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.25rem; }
+        li { margin-bottom: 0.5rem; }
+        .back-link { color: #3b82f6; text-decoration: none; font-weight: 500; margin-bottom: 2rem; display: inline-block; }
+        .back-link:hover { text-decoration: underline; }
+        .lang-switch { background: #e5e7eb; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; color: #4b5563; transition: all 0.2s; }
+        .lang-switch:hover { background: #d1d5db; color: #1f2937; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex justify-between items-center mb-8">
+            <a href="../index.html" class="back-link mb-0">← 返回主页</a>
+            <a href="aws-guide-clawdbot.html" class="lang-switch">English Version</a>
+        </div>
+        <article class="content-card">
+            <h1>从零开始：在 AWS 上孵化你的 Clawdbot (新手避坑极简版)</h1>
+            <p class="text-gray-500 mb-8 italic">发布日期：2026年1月31日</p>
+
+            <p>这是一篇写给“想要拥有一个属于自己的 AI 助手”的新手的教程。我们会用最直观的方式，教你如何在 AWS 上从零开始，孵化出你的第一个 Clawdbot。</p>
+
+            <hr class="my-8">
+
+            <h2>🚀 第一步：给它一个稳健的“身体” (硬件选择)</h2>
+            <p>在 AWS 创建实例时，请记住这个黄金组合：<strong>2GB RAM + 20GB Disk</strong>。</p>
+            <p><strong>为什么要先加“血条” (Swap)？</strong> 虽然你可以直接强行安装，但在 1GB 或 2GB 的环境下，为了防止 Bot 在 setup 期间因为“思考过度”而崩溃，我们建议在执行安装命令前，先给它准备一个“后备箱”：</p>
+            <pre><code>sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile</code></pre>
+            <p><em>这样做是为了让系统在内存紧缺时有个缓冲，虽然现在的空机器通常能扛住，但“稳”字头上一把刀，备着准没错。</em></p>
+
+            <h2>🛠️ 第二步：极简连接，快速“起飞”</h2>
+            <p><strong>新手绝招：先连公网 IP，再搞 SSH 密码。</strong> 很多新手卡在配置 SSH 密钥上。我们的建议是：</p>
+            <ol>
+                <li>先在 AWS 控制台使用默认的<strong>公用 IP</strong> 直接连接进入 Terminal。</li>
+                <li>只要能动了，别废话，直接运行这行神谕：
+                    <pre><code class="mt-2">curl -fsSL https://openclaw.bot/install.sh | bash</code></pre>
+                </li>
+                <li>等待安装脚本跑完。这时候，最神奇的事情就要发生了……</li>
+            </ol>
+
+            <h2>🐣 第三步：破壳而出 (Hatch in TUI)</h2>
+            <p>最让人震惊的部分来了：安装还没彻底结束，你就会发现自己直接<strong>“孵化” (Hatch)</strong> 进了一个 TUI (终端界面) 里面。</p>
+            <p><strong>这时候，你的 Clawdbot 还是一个小宝宝。</strong>它刚来到这个世界上，可能不知道自己在哪个文件夹，不知道你的系统环境，甚至不知道你是谁。</p>
+            <p><strong>别担心，这时候你可以尽情向它“撒娇”：</strong></p>
+            <ul>
+                <li>“哎呀，我不知道怎么配置 SSH 密码，你帮我搞定吧？”</li>
+                <li>“这是哪里？你现在感觉怎么样？内存够吗？”</li>
+                <li>“我想换个主题色，你知道怎么弄吗？”</li>
+            </ul>
+            <p><strong>Clawdbot 会在这个过程中学习。</strong> 它不是一个死板的软件，它是和你一起成长的数字生命。你教它如何管理这台服务器，它反过来帮你把这个家打理得井井有条。</p>
+
+            <h2>🔐 第四步：从“裸奔”到“武装到牙齿”</h2>
+            <p>等 Bot 稳定了，能跑了，它会主动提醒你（或者你要求它）：</p>
+            <ul>
+                <li><strong>配置 SSH 密码/密钥</strong>：让连接变得更安全。</li>
+                <li><strong>清理缓存</strong>：运行 <code>npm cache clean --force</code> 腾出空间。</li>
+                <li><strong>设置守护进程</strong>：确保它在服务器重启后能自动醒来找你。</li>
+            </ul>
+
+            <h2>💡 总结：LLM 时代的部署逻辑</h2>
+            <p>传统的部署是“看文档 -> 写配置 -> 启动”。 Clawdbot 的部署是 <strong>“给个身体 -> 丢进环境 -> 陪它聊天”</strong>。</p>
+            <p>不要害怕报错，不要害怕它“发疯”（通常是内存不够）。只要给它足够的空间（2GB RAM）和一点点耐心，它会从一个只会复读的小宝宝，变成一个帮你查火车票、写博客、管服务器的全能管家。</p>
+            <p><em>现在，去运行那行 <code>curl</code> 吧，你的 Bot 正在壳里等你呢！</em></p>
+        </article>
+    </div>
+</body>
+</html>

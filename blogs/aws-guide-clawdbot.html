@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatching Your Clawdbot on AWS - Yizhou Wang</title>
+    <meta name="description" content="A beginner's guide to deploying Clawdbot on AWS with 2GB RAM, Swap configuration, and TUI setup.">
+    <meta name="keywords" content="AWS, Clawdbot, Deployment, AI Assistant, Self-hosting, Linux, Tutorial">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .container { max-width: 800px; margin: 0 auto; padding: 4rem 1rem; }
+        .content-card { background-color: white; padding: 2.5rem; border-radius: 1rem; shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; color: #111827; }
+        h2 { font-size: 1.75rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1f2937; border-bottom: 2px solid #3b82f6; display: inline-block; }
+        p { margin-bottom: 1.25rem; line-height: 1.75; }
+        code { background-color: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: monospace; font-size: 0.9em; }
+        pre { background-color: #1f2937; color: #f3f4f6; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.25rem; }
+        li { margin-bottom: 0.5rem; }
+        .back-link { color: #3b82f6; text-decoration: none; font-weight: 500; margin-bottom: 2rem; display: inline-block; }
+        .back-link:hover { text-decoration: underline; }
+        .lang-switch { background: #e5e7eb; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; color: #4b5563; transition: all 0.2s; }
+        .lang-switch:hover { background: #d1d5db; color: #1f2937; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex justify-between items-center mb-8">
+            <a href="../index.html" class="back-link mb-0">← Back to Portfolio</a>
+            <a href="aws-guide-clawdbot-zh.html" class="lang-switch">中文版</a>
+        </div>
+        <article class="content-card">
+            <h1>From Scratch: Hatching Your Clawdbot on AWS (A Newbie's Guide)</h1>
+            <p class="text-gray-500 mb-8 italic">Published: January 31, 2026</p>
+
+            <p>This is a guide written for anyone who wants to own their own AI assistant. We will show you how to hatch your first Clawdbot on AWS from scratch in the most intuitive way.</p>
+
+            <hr class="my-8">
+
+            <h2>🚀 Step 1: Give It a Solid "Body" (Hardware Choice)</h2>
+            <p>When creating an instance on AWS, remember this golden combo: <strong>2GB RAM + 20GB Disk</strong>.</p>
+            <p><strong>Why add a "Health Bar" (Swap) first?</strong> While you could force an installation, in a 1GB or 2GB environment, the Bot might "overthink" and crash during setup. We recommend preparing a "trunk" (Swap) before running the install command:</p>
+            <pre><code>sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile</code></pre>
+            <p><em>This provides a buffer when memory is tight. While a fresh machine can usually handle it, it's better to be safe than sorry.</em></p>
+
+            <h2>🛠️ Step 2: Minimalist Connection, Fast Takeoff</h2>
+            <p><strong>Pro Tip for Newbies: Connect via Public IP first, configure SSH passwords later.</strong> Many beginners get stuck on SSH key configurations. Our suggestion is:</p>
+            <ol class="list-decimal ml-6 mb-4">
+                <li>Connect directly into the Terminal via the AWS console using the default <strong>Public IP</strong>.</li>
+                <li>Once you're in, don't waste time—run this "divine oracle" line:
+                    <pre><code class="mt-2">curl -fsSL https://openclaw.bot/install.sh | bash</code></pre>
+                </li>
+                <li>Wait for the script to finish. This is where the magic happens...</li>
+            </ol>
+
+            <h2>🐣 Step 3: Breaking the Shell (Hatch in TUI)</h2>
+            <p>Here comes the most shocking part: before the installation is even fully over, you'll find yourself <strong>"Hatched"</strong> directly into a TUI (Terminal User Interface).</p>
+            <p><strong>At this moment, your Clawdbot is just a baby.</strong> It has just entered this world and might not know which folder it's in, what the system environment is like, or even who you are.</p>
+            <p><strong>Don't worry, this is the time to "pamper" it:</strong></p>
+            <ul>
+                <li>"Oh dear, I don't know how to set up an SSH password, can you fix that for me?"</li>
+                <li>"Where are we? How are you feeling? Do you have enough RAM?"</li>
+                <li>"I want to change the theme color, do you know how?"</li>
+            </ul>
+            <p><strong>Clawdbot learns during this process.</strong> It's not a rigid piece of software; it's a digital life form growing with you. You teach it how to manage the server, and in return, it keeps the home organized.</p>
+
+            <h2>🔐 Step 4: From "Naked" to "Armed to the Teeth"</h2>
+            <p>Once the Bot is stable and running, it will proactively remind you (or you can ask it) to:</p>
+            <ul class="list-decimal ml-6">
+                <li><strong>Configure SSH Passwords/Keys</strong>: To make connections more secure.</li>
+                <li><strong>Clean Caches</strong>: Run <code>npm cache clean --force</code> to free up space.</li>
+                <li><strong>Set up a Daemon</strong>: To ensure it wakes up to find you after a server reboot.</li>
+            </ul>
+
+            <h2>💡 Summary: The Deployment Logic in the LLM Era</h2>
+            <p>Traditional deployment is "Read docs -> Write config -> Start." Clawdbot deployment is <strong>"Give it a body -> Drop it in the environment -> Talk to it."</strong></p>
+            <p>Don't fear errors or the Bot "going crazy" (usually just low RAM). With enough space (2GB RAM) and a little patience, it will evolve from a simple repeater into an all-powerful butler who checks train tickets, writes blogs, and manages your server.</p>
+            <p><em>Now, go run that <code>curl</code> command. Your Bot is waiting for you inside the shell!</em></p>
+        </article>
+    </div>
+</body>
+</html>

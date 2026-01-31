@@ -1,0 +1,30 @@
+# Hatching Your Clawdbot on AWS (A Newbie's Guide)
+
+## Overview
+A beginner-friendly guide to deploying Clawdbot on AWS.
+
+## Key Hardware Requirements
+- **RAM:** 2GB
+- **Disk:** 20GB
+- **Swap:** 2GB recommended
+
+## Installation Command
+```bash
+curl -fsSL https://openclaw.bot/install.sh | bash
+```
+
+## Key Deployment Steps
+1. Prepare hardware (2GB RAM).
+2. Configure 2GB Swap for stability.
+3. Connect via Public IP.
+4. Run the install script.
+5. Interact with the TUI "Hatch" process to configure the bot.
+
+## Post-Installation
+- Configure SSH keys/passwords.
+- Clean npm caches.
+- Set up a daemon service.
+
+## Context
+Written by Yizhou Wang.
+Full article: https://yourdomain.com/blogs/aws-guide-clawdbot.html
